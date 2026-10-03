@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "研途 · 深度学习训练营",
+  "short_name": "研途",
+  "lang": "zh-CN",
+  "start_url": "./#home",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef2f8",
+  "theme_color": "#14696b",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
