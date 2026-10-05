@@ -207,3 +207,28 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 @media(max-width:760px){.ux-shell main{padding:16px 14px 24px}.ux-shell header{padding:7px 14px}.ux-shell .share-bar{padding:6px 14px}.ux-shell .share-bar p{flex-basis:auto;font-size:11px}.ux-shell .share-bar{gap:5px}.ux-shell h1{font-size:27px}.ux-shell .ux-continue-card h2{font-size:24px}.ux-shell .ux-continue-card,.ux-shell .ux-inbox{padding:17px}.ux-shell .lesson-body .block{padding:17px}.ux-shell .lesson-body h2{font-size:22px}.ux-shell .focus-tabs{position:static}.ux-shell .focus-tabs button{min-width:110px;min-height:44px}.ux-shell .lesson-body pre{font-size:13px}.ux-shell .exec-terminal pre{min-height:100px}}
 @media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.ux-shell aside,.ux-shell header,.ux-shell .focus-tabs,.ux-shell .ux-phase-tabs,.ux-shell #goBack,.ux-shell #uxCommand,.ux-shell #modal{background:#f4f6fa;border-color:#a3afbe;backdrop-filter:none;-webkit-backdrop-filter:none}.ux-shell dialog::backdrop{backdrop-filter:none;-webkit-backdrop-filter:none}.ux-shell{background:#f4f6fa}}
 @media(max-width:760px){.ux-shell .focus-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.ux-shell .focus-tabs button{min-width:0}.ux-shell .share-bar p{flex-basis:100%}}
+
+/* Four stages share one glass construction; hue is only a secondary cue.
+   Selected text, border and underline remain visible without motion/color. */
+.ux-shell .ux-phase-tabs{gap:8px;padding:7px;border-radius:19px;overflow:visible}
+.ux-shell [data-phase="0"],.ux-shell .camp-week[data-stage="0"]{--phase-ink:#075e51;--phase-rgb:29,145,119;--phase-wash:#d9f2e9}
+.ux-shell [data-phase="1"],.ux-shell .camp-week[data-stage="1"]{--phase-ink:#1757a1;--phase-rgb:49,113,214;--phase-wash:#dfeaff}
+.ux-shell [data-phase="2"],.ux-shell .camp-week[data-stage="2"]{--phase-ink:#7038a1;--phase-rgb:144,83,194;--phase-wash:#efe1fc}
+.ux-shell [data-phase="3"],.ux-shell .camp-week[data-stage="3"]{--phase-ink:#865013;--phase-rgb:187,122,35;--phase-wash:#f9ebd0}
+.ux-shell .ux-phase-tabs button{position:relative;isolation:isolate;overflow:hidden;display:grid;gap:4px;text-align:left;min-height:104px;padding:14px 15px 15px;border:1px solid rgba(var(--phase-rgb),.24);border-radius:13px;background:linear-gradient(140deg,#ffffffd9,rgba(var(--phase-rgb),.13));box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 #ffffffa6,0 2px 6px #19345505;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease}
+.ux-shell .ux-phase-tabs button:before{content:'';position:absolute;z-index:-1;pointer-events:none;inset:0;background:linear-gradient(125deg,#ffffffb3 0%,#ffffff00 42%,#ffffff73 48%,#ffffff00 58%);opacity:.6;transition:opacity .18s ease}
+.ux-shell .ux-phase-tabs button small{font-size:11px;color:var(--phase-ink);font-weight:600;padding-right:52px}
+.ux-shell .ux-phase-tabs button strong,.ux-shell .ux-phase-tabs button[aria-selected=true] strong{font-size:17px;color:var(--phase-ink);font-weight:650;letter-spacing:-.2px}
+.ux-shell .ux-phase-tabs button span{font-size:12px;color:#535965}
+.ux-shell .ux-phase-tabs button[aria-selected=true]{background:linear-gradient(140deg,#fffffff5 0%,var(--phase-wash) 100%);border:1px solid rgba(var(--phase-rgb),.8);box-shadow:inset 0 1px 0 #fff,inset 0 -3px 0 rgba(var(--phase-rgb),.9),0 4px 13px rgba(var(--phase-rgb),.18)}
+.ux-shell .ux-phase-tabs button[aria-selected=true]:after{content:'✓ 当前';position:absolute;top:12px;right:10px;font-size:10px;font-weight:650;line-height:1.6;padding:2px 6px;border-radius:999px;color:var(--phase-ink);background:#ffffffcc;box-shadow:inset 0 0 0 1px rgba(var(--phase-rgb),.14);pointer-events:none}
+.ux-shell .ux-phase-tabs button[aria-selected=true]:before{opacity:1}
+.ux-shell .camp-week[data-stage]{border-top:2px solid rgba(var(--phase-rgb),.42)}
+.ux-shell .camp-week[data-stage] .ux-week-label{color:var(--phase-ink)}
+@media(hover:hover){.ux-shell .ux-phase-tabs button:hover{transform:translateY(-2px);border-color:rgba(var(--phase-rgb),.65);box-shadow:inset 0 1px 0 #fff,0 6px 16px rgba(var(--phase-rgb),.17)}.ux-shell .ux-phase-tabs button:hover:before{opacity:1}.ux-shell .ux-phase-tabs button[aria-selected=true]:hover{box-shadow:inset 0 1px 0 #fff,inset 0 -3px 0 rgba(var(--phase-rgb),.9),0 6px 16px rgba(var(--phase-rgb),.2)}}
+.ux-shell .ux-phase-tabs button:focus-visible{outline:3px solid var(--phase-ink);outline-offset:3px}
+.ux-shell .ux-phase-tabs button:not(:disabled):active{transform:scale(.98);box-shadow:inset 0 2px 6px rgba(var(--phase-rgb),.17)}
+@media(max-width:760px){.ux-shell .ux-phase-tabs{gap:7px;padding:6px}.ux-shell .ux-phase-tabs button{min-height:108px;padding:12px}.ux-shell .ux-phase-tabs button strong{font-size:16px}.ux-shell .ux-phase-tabs button[aria-selected=true]:after{top:10px;right:7px}}
+@media(prefers-contrast:more){.ux-shell .ux-phase-tabs button{background:white;border-color:#596271}.ux-shell .ux-phase-tabs button[aria-selected=true]{background:#edf1f7;border:2px solid #1d2836;box-shadow:inset 0 -3px #1d2836}.ux-shell .ux-phase-tabs button:before{display:none}}
+@media(prefers-reduced-transparency:reduce){.ux-shell .ux-phase-tabs button{background:var(--phase-wash)}.ux-shell .ux-phase-tabs button:before{display:none}}
+@media(prefers-reduced-motion:reduce){.ux-shell .ux-phase-tabs button:hover,.ux-shell .ux-phase-tabs button:not(:disabled):active{transform:none}}
