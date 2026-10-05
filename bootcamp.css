@@ -166,3 +166,43 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 @media(prefers-reduced-transparency:reduce){.ux-shell header,.ux-shell #goBack{background:#fafafc;backdrop-filter:none}}
 @media(prefers-contrast:more){.ux-shell{--muted:#393940;--line:#868690}.ux-shell .card,.ux-shell .block,.ux-shell .camp-week{border-color:#868690}.ux-shell button{border-color:#868690}}
 @media(prefers-reduced-motion:reduce){.ux-shell *,.ux-shell *:before,.ux-shell *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ux-shell .camp-week:hover,.ux-shell button:not(:disabled):active{transform:none!important}}
+
+/* Glass revision: blur only navigation surfaces, never the text itself.
+   Opaque surfaces are the default fallback on unsupported browsers. */
+.ux-shell{--glass-shadow:inset 0 1px 0 #ffffffee,inset 0 -1px 0 #ffffff60,0 5px 20px #1934550a;background:radial-gradient(ellipse at 0 5%,#dcecff 0,transparent 48%),radial-gradient(ellipse at 90% 25%,#eae4ff 0,transparent 45%),#f4f6fa;background-attachment:fixed}
+.ux-shell aside,.ux-shell header,.ux-shell .focus-tabs,.ux-shell .ux-phase-tabs,.ux-shell #goBack,.ux-shell #uxCommand,.ux-shell #modal{background:#f2f5fa;border:1px solid #d4dce8;box-shadow:var(--glass-shadow)}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .ux-shell aside,.ux-shell header,.ux-shell .focus-tabs,.ux-shell .ux-phase-tabs,.ux-shell #goBack,.ux-shell #uxCommand,.ux-shell #modal{background:linear-gradient(130deg,#ffffffc9,#edf3fc99);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);border-color:#ffffffd9}
+ .ux-shell aside{background:linear-gradient(160deg,#e9f2ffcc,#f2edfac4)}
+ .ux-shell #uxCommand,.ux-shell #modal{background:linear-gradient(135deg,#ffffffed,#edf2fbe6);box-shadow:inset 0 1px #fff,0 25px 80px #17305230}
+}
+.ux-shell .workspace{min-width:0}.ux-shell main{padding:22px 24px 28px;max-width:1560px}
+.ux-shell h1{font-size:clamp(27px,2.35vw,34px);line-height:1.3;letter-spacing:-.7px}
+.ux-shell .ux-page-heading{margin-bottom:16px}.ux-shell .ux-page-heading p{font-size:15px;margin-top:7px}
+.ux-shell .ux-dashboard{align-items:start;gap:14px}
+.ux-shell .ux-continue-card,.ux-shell .ux-inbox{padding:20px 22px;border-radius:20px}
+.ux-shell .ux-continue-card h2{font-size:27px;line-height:1.35;margin:12px 0 9px}
+.ux-shell .ux-continue-card .actions{margin:14px 0}.ux-shell .ux-inbox>button{padding:8px 0;min-height:60px}
+.ux-shell .ux-inbox-note{margin-top:10px}.ux-shell .ux-next-metadata{font-size:13px}.ux-shell .ux-card-top{font-size:12px}
+.ux-shell .camp-week{padding:17px 19px;gap:8px}.ux-shell .camp-week h3{font-size:20px}.ux-shell .camp-week p{font-size:15px;line-height:1.6}
+.ux-shell .grid{gap:12px}.ux-shell .section-title{margin:20px 0 12px}
+.ux-shell .lesson-body .block{padding:20px;margin-bottom:13px;background:#fffffffa}
+.ux-shell .lesson-body{line-height:1.8}.ux-shell .lesson-body p{line-height:1.8}
+.ux-shell .lesson-body h2{font-size:23px;line-height:1.45}.ux-shell .lesson-body h3{font-size:18px}
+.ux-shell .lesson-body .chapter-route{gap:8px}.ux-shell .lesson-body details{padding:10px 14px;margin:10px 0}
+.ux-shell .lesson-side .card{padding:15px}.ux-shell .ux-checklist button{min-height:36px;padding:4px 0}
+.ux-shell .exec-explain,.ux-shell .exec-try{padding:14px}.ux-shell .exec-try{margin-top:14px}
+.ux-shell .exec-toolbar{padding:10px 0}.ux-shell .exec-flow{gap:9px;margin:14px 0}.ux-shell .exec-step{padding:11px}
+.ux-shell .exec-terminal pre{min-height:110px}.ux-shell .exec-heading h2{font-size:23px}
+.ux-shell .exec-explain p{min-height:0}.ux-shell .exec-heading p{margin-bottom:12px}
+.ux-shell .ux-phase-tabs button{padding:9px 12px}.ux-shell .ux-phase-tabs button strong{font-size:16px}
+.ux-shell .focus-tabs button[aria-selected=true],.ux-shell .ux-phase-tabs button[aria-selected=true]{background:#fffffff2;box-shadow:0 2px 6px #28476618,inset 0 1px #fff}
+.ux-shell aside .nav.selected{background:linear-gradient(120deg,#ffffffdd,#dcecffcc);box-shadow:inset 0 1px #fff,0 2px 6px #20456809}
+.ux-shell .ux-full-search label{color:#606068}.ux-shell .ux-nav-group summary:after{color:#596e86}
+.ux-shell .share-bar{background:#edf3f9;border-bottom:1px solid #dce4ee;color:#41576d;padding:6px 24px;font-size:12px}
+.ux-shell .share-bar button{font-size:12px;min-height:34px}.ux-shell .share-bar p{line-height:1.5}
+.ux-shell dialog::backdrop{background:#1f2e4540;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+@media(min-width:1500px){.ux-shell .exec-inspector{grid-template-columns:1fr 1fr}.ux-shell .exec-explain p{min-height:0}}
+@media(min-width:1700px){.ux-shell #uxHomeWeeks{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.ux-shell main{padding:16px 14px 24px}.ux-shell header{padding:7px 14px}.ux-shell .share-bar{padding:6px 14px}.ux-shell .share-bar p{flex-basis:auto;font-size:11px}.ux-shell .share-bar{gap:5px}.ux-shell h1{font-size:27px}.ux-shell .ux-continue-card h2{font-size:24px}.ux-shell .ux-continue-card,.ux-shell .ux-inbox{padding:17px}.ux-shell .lesson-body .block{padding:17px}.ux-shell .lesson-body h2{font-size:22px}.ux-shell .focus-tabs{position:static}.ux-shell .focus-tabs button{min-width:110px;min-height:44px}.ux-shell .lesson-body pre{font-size:13px}.ux-shell .exec-terminal pre{min-height:100px}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.ux-shell aside,.ux-shell header,.ux-shell .focus-tabs,.ux-shell .ux-phase-tabs,.ux-shell #goBack,.ux-shell #uxCommand,.ux-shell #modal{background:#f4f6fa;border-color:#a3afbe;backdrop-filter:none;-webkit-backdrop-filter:none}.ux-shell dialog::backdrop{backdrop-filter:none;-webkit-backdrop-filter:none}.ux-shell{background:#f4f6fa}}
