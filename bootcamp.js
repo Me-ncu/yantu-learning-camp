@@ -339,7 +339,35 @@ Object.assign(navigationRoutes,{home:uxHome,showLesson:uxLesson,campWeek:uxWeek,
 home=trackedPage('home',uxHome);showLesson=trackedPage('showLesson',uxLesson);campWeek=trackedPage('campWeek',uxWeek);uxCurriculum=trackedPage('uxCurriculum',uxCurriculum);uxSettings=trackedPage('uxSettings',uxSettings);
 for(const [name,route] of [['reviews','reviews'],['library','library'],['showResults','results'],['campProjects','projects'],['materials','materials'],['coverage','coverage'],['studyGuide','studyGuide'],['campEvidence','evidence'],['legacyOverview','legacy'],['showWeek','legacyWeek'],['search','search']]){const render=navigationRoutes[name];navigationRoutes[name]=function(...args){uxRoute=route;uxSetHash(route+(args[0]!==undefined&&args[0]!==null?'/'+encodeURIComponent(args[0]):''));const result=render(...args);uxSetActive();return result;};}
 reviews=trackedPage('reviews',navigationRoutes.reviews);library=trackedPage('library',navigationRoutes.library);showResults=trackedPage('showResults',navigationRoutes.showResults);campProjects=trackedPage('campProjects',navigationRoutes.campProjects);materials=trackedPage('materials',navigationRoutes.materials);coverage=trackedPage('coverage',navigationRoutes.coverage);studyGuide=trackedPage('studyGuide',navigationRoutes.studyGuide);campEvidence=trackedPage('campEvidence',navigationRoutes.campEvidence);legacyOverview=trackedPage('legacyOverview',navigationRoutes.legacyOverview);showWeek=trackedPage('showWeek',navigationRoutes.showWeek);search=trackedPage('search',navigationRoutes.search);
+// Decorate UI time labels only; never rewrite code, inputs, or lesson prose.
+// The observer also covers dynamically rendered routes and search results.
+function uxDecorateTimes(){
+ const selectors='.ux-next-metadata,.ux-inbox-note,.ux-card-bottom,.lesson-list,.eyebrow,.lesson-side,.ux-phase-tabs,#uxCommandResults,.exec-toolbar label,#main>p.muted';
+ const pattern=/\d+(?:\.\d+)?(?:\s*[—–~－-]\s*\d+(?:\.\d+)?)?\s*(?:分钟|小时|秒|MIN\b)/g;
+ for(const root of document.querySelectorAll(selectors)){
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];
+  while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){
+   if(node.parentElement.closest('.ux-time,svg,pre,code,textarea,input,option,script,style'))continue;
+   const matches=[...node.textContent.matchAll(pattern)];if(!matches.length)continue;
+   // Replace the former book glyph rather than leaving two adjacent icons.
+   if(node.parentElement.closest('.ux-next-metadata'))node.parentElement.querySelector('svg')?.remove();
+   const fragment=document.createDocumentFragment();let offset=0;
+   for(const match of matches){
+    fragment.append(node.textContent.slice(offset,match.index));
+    const label=document.createElement('span');label.className='ux-time';
+    label.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>';
+    label.append(match[0]);fragment.append(label);offset=match.index+match[0].length;
+   }
+   fragment.append(node.textContent.slice(offset));node.replaceWith(fragment);
+  }
+ }
+ const speed=document.querySelector('label[for="execSpeed"]');
+ if(speed&&!speed.querySelector('.ux-time-icon'))speed.insertAdjacentHTML('afterbegin','<svg class="ux-time-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>');
+}
 uxSetupShell();
+new MutationObserver(uxDecorateTimes).observe(document.querySelector('#main'),{childList:true,subtree:true,characterData:true});
+new MutationObserver(uxDecorateTimes).observe(document.querySelector('#uxCommandResults'),{childList:true,subtree:true});
 window.studyUIReady=()=>{
  studyDrafts.status();if(studyDrafts.list().length)return;
  const match=uxInitialHash.match(/^#(lesson|week)\/(\w+)(?:\?week=(\d+))?$/);

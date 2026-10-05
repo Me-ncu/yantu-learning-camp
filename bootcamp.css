@@ -278,3 +278,7 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 .ux-shell .lesson-row:focus-visible>span:last-child{border-color:#1757a1;box-shadow:inset 0 0 0 1px #1757a1}
 @media(max-width:760px){.ux-shell .lesson-row{flex-wrap:nowrap;padding:14px;gap:10px}.ux-shell .lesson-row>span:last-child{max-width:42%;min-width:80px;padding:8px 12px;font-size:14px}.ux-shell header #breadcrumb{flex-basis:80px}.ux-shell #goBack{min-height:44px;padding:7px 10px}.ux-shell #menu{flex-shrink:0}.ux-shell footer{padding-bottom:20px}}
 @media(prefers-contrast:more){.ux-shell .lesson-row>span:last-child,.ux-shell .ux-card-bottom button{background:#fff;border-color:#1757a1}}
+
+/* A single quiet clock glyph for duration metadata, across every route. */
+.ux-shell .ux-time{display:inline-flex;align-items:center;gap:5px;vertical-align:baseline;white-space:nowrap;font:inherit;color:inherit}
+.ux-shell .ux-time svg,.ux-shell .ux-time-icon{width:1em!important;height:1em!important;min-width:1em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;vertical-align:-.12em}
