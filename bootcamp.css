@@ -76,3 +76,93 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 @media(max-width:1100px){.ux-shell .lesson-layout:has(.focus-tabs){display:block}.ux-shell .lesson-side .card{position:static;max-height:none}.ux-dashboard{grid-template-columns:1fr}.ux-inbox{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;padding:17px 20px}.ux-inbox .eyebrow{display:none}.ux-inbox h2{font-size:20px;margin-bottom:3px}.ux-inbox-note{margin-top:9px}.ux-shell main{padding:20px}.ux-shell .focus-tabs{margin-bottom:16px}.ux-lesson-heading{flex-wrap:wrap}.ux-shell header #breadcrumb{max-width:180px}.ux-shell #saveStatus{max-width:130px;line-height:1.5}.ux-shell .header-right{gap:5px}}
 @media(max-width:760px){.ux-shell header{padding:10px 14px;gap:8px}.ux-shell header #breadcrumb{max-width:none}.ux-shell #uxQuickSearch,.ux-shell.ux-focus.ux-lesson #uxQuickSearch{flex:0 0 auto;width:110px;padding:5px 9px;font-size:12px}.ux-shell .header-right{width:100%}.ux-shell #saveStatus{max-width:none}.ux-shell main{padding:18px 14px 28px}.ux-shell h1{font-size:28px}.ux-page-heading p{font-size:13px}.ux-page-heading{margin-bottom:14px}.ux-dashboard{gap:12px}.ux-continue-card,.ux-inbox{padding:18px}.ux-continue-card h2{font-size:25px;margin-top:13px}.ux-continue-card>p{font-size:15px}.ux-inbox{gap:0 12px}.ux-inbox button b{min-width:30px;height:34px;font-size:23px}.ux-inbox button span{font-size:13px}.ux-inbox button small{font-size:11px}.ux-inbox button svg{width:12px}.ux-inbox>button{gap:7px}.ux-phase-tabs button{padding:9px 12px}.ux-phase-tabs button strong{font-size:15px}.ux-shell .grid{grid-template-columns:1fr;gap:12px}.ux-shell .camp-week{padding:16px 18px}.ux-shell .camp-week h3{font-size:20px}.ux-shell .focus-tabs{top:100px}.ux-shell .focus-tabs button{min-width:120px;font-size:13px;padding:8px}.ux-shell .lesson-body .block{padding:18px}.ux-shell .lesson-body h2{font-size:23px}.ux-lesson-heading{gap:7px}.ux-lesson-heading .ux-reading-tools{justify-content:flex-start}.ux-shell .section-title>button{font-size:12px}.ux-shell .ux-lesson-footer{flex-wrap:wrap}.ux-shell #goBack{font-size:13px}.ux-shell footer{font-size:11px;padding-left:16px;padding-right:16px}}
 @media(prefers-reduced-motion:reduce){.ux-shell *,.ux-shell *:before,.ux-shell *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ux-shell .camp-week:hover,.ux-shell .lesson-row:hover,.ux-shell aside .nav:hover,.ux-shell button:active,.ux-shell .primary:hover svg{transform:none!important}}
+/* YANTU APPLE THEME BUNDLE */
+/* Apple-inspired web surfaces, not an imitation of native Liquid Glass.
+   Navigation uses translucency; learning content stays opaque and readable.
+   This file is bundled after the existing structural stylesheet. */
+.ux-shell{--ink:#1d1d1f;--muted:#606068;--line:#dedee3;--paper:#f5f5f7;--green:#0066cc;--pale:#eaf3ff;--surface:#fff;--shadow:0 4px 20px #20203006; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+.ux-shell aside{background:#efeff3;color:var(--ink);border-right:1px solid #dcdce2;box-shadow:none;padding:22px 14px}
+.ux-shell .brand{font-size:26px;letter-spacing:-.8px;margin-bottom:26px;color:var(--ink)}
+.ux-shell .mark{font-family:inherit;font-size:23px;display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:13px;background:linear-gradient(145deg,#3294ff,#0066cc);box-shadow:inset 0 1px 0 #ffffff55,0 3px 7px #0071e31a;color:white}
+.ux-shell .brand small{color:#606068;font-size:9px;letter-spacing:.4px}
+.ux-shell aside .nav,.ux-shell #weeks .nav{color:#424247;border-radius:9px;font-weight:500;min-height:40px}
+.ux-shell aside .nav:hover{background:#e3e3e9;color:#1d1d1f;transform:none}
+.ux-shell aside .nav.selected{background:#dceafa;color:#0055af;box-shadow:none;border-color:transparent}
+.ux-shell aside .nav.selected:before{display:none}
+.ux-shell .nav-label,.ux-shell .aside-bottom,.ux-shell .aside-bottom>span,.ux-shell #uxSidebarProgress small{color:#65656d}
+.ux-shell .ux-nav-group summary,.ux-shell .ux-resources summary{color:#333338}
+.ux-shell .ux-nav-group summary small,.ux-shell .week-num{color:#65656d}
+.ux-shell .ux-nav-group summary>span{background:#e2e7ef;color:#48617f;border:0;box-shadow:none}
+.ux-shell .ux-nav-group>div,.ux-shell .ux-resources{border-color:#d7d7dd}
+.ux-shell header{background:#fafafce8;border-color:#dedee380;box-shadow:none;backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%)}
+.ux-shell #breadcrumb{color:#606068}
+.ux-shell #uxQuickSearch{background:#eaeaf080;border:1px solid #dcdce3;box-shadow:none;border-radius:11px;color:#5e5e66}
+.ux-shell #uxQuickSearch kbd{background:#ffffffaa;color:#606068;border-color:#dedee3}
+.ux-shell button,.ux-shell .button{border-radius:10px;border-color:#d9d9e0;transition:background .18s ease,box-shadow .18s ease,transform .18s ease;color:var(--ink)}
+.ux-shell button.primary:not(#continue),.ux-shell #continue{background:#0071e3;border:1px solid #0071e3;color:white;box-shadow:0 2px 5px #0071e31a;border-radius:999px;padding:10px 20px}
+.ux-shell button.primary:hover,.ux-shell #continue:hover{background:#0064cb;color:white}
+.ux-shell :focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+.ux-shell h1{font-size:clamp(28px,2.7vw,38px);font-weight:700;line-height:1.25;letter-spacing:-1px;color:var(--ink)}
+.ux-shell h2,.ux-shell h3,.ux-shell .block>h2{color:var(--ink);letter-spacing:-.4px}
+.ux-shell main{max-width:1440px;padding:28px 30px 40px}
+.ux-shell .eyebrow{color:#65656d;font-size:11px;letter-spacing:1px;font-weight:600}
+.ux-page-heading p,.ux-shell .source-meta,.ux-shell .card p{color:#606068}
+.ux-local-badge{background:#e8f4ec;color:#276443;border:0;box-shadow:none}
+.ux-continue-card,.ux-inbox{background:white;border:1px solid #e5e5ea;border-radius:22px;box-shadow:var(--shadow);padding:25px}
+.ux-continue-card{background:linear-gradient(120deg,#fff 35%,#edf5ff);position:relative;overflow:hidden;color:var(--ink)}
+.ux-continue-card:before,.ux-continue-card:after{display:none}
+.ux-continue-card h2{font-size:30px;color:var(--ink);letter-spacing:-.7px;margin:18px 0 12px}
+.ux-continue-card>p,.ux-continue-card .ux-card-top,.ux-next-metadata,.ux-progress-caption,.ux-progress-caption strong{color:#555d69}
+.ux-continue-card .pill{background:#e4efff;color:#005bb9;border:0}
+.ux-continue-card #currentWeek{color:#0066cc;background:transparent;border-color:transparent}
+.ux-continue-card #currentWeek:hover{background:#e5effc}
+.ux-shell .progress,.ux-continue-card .progress{height:5px;background:#e7e7ed}
+.ux-shell .progress span,.ux-continue-card .progress span{background:#0071e3}
+.ux-inbox h2{font-size:22px}.ux-inbox button span{color:#303036}.ux-inbox button small,.ux-inbox-note{color:#62626b}
+.ux-inbox button b{background:#eef4fc;color:#0066cc;border-radius:12px;box-shadow:none}
+.ux-shell .section-title h2:before{display:none}
+.ux-shell .section-title>button,.ux-bottom-links button{color:#0066cc}
+.ux-phase-tabs,.ux-shell .focus-tabs{background:#e9e9ee;border:1px solid #dedee5;border-radius:13px;box-shadow:none;padding:4px;gap:4px}
+.ux-phase-tabs button,.ux-shell .focus-tabs button{border-radius:9px;color:#62626b;background:transparent}
+.ux-phase-tabs button[aria-selected=true],.ux-shell .focus-tabs button[aria-selected=true]{background:white;color:#1d1d1f;box-shadow:0 2px 6px #1d1d1f14;border-color:transparent}
+.ux-phase-tabs button strong,.ux-phase-tabs button[aria-selected=true] strong{color:#303036;font-size:15px}
+.ux-phase-tabs button small,.ux-phase-tabs button span{color:#62626b}
+.ux-shell .camp-week{background:white;border:1px solid #e2e2e8;border-left:1px solid #e2e2e8;border-radius:18px;box-shadow:var(--shadow);padding:22px;gap:10px}
+.ux-shell .camp-week h3{font-size:21px;color:#1d1d1f;letter-spacing:-.5px}
+.ux-shell .camp-week p,.ux-card-bottom small{color:#606068}
+.ux-shell .camp-week .pill{border:0;border-radius:7px}
+.ux-card-bottom button{border:0;background:#f0f5fc;color:#0066cc;border-radius:999px;padding:7px 14px}
+.ux-shell .lesson-row{box-shadow:none;border-color:#e2e2e7;border-radius:13px}
+.ux-shell .lesson-row:hover{background:#f7faff;transform:none}
+.ux-shell .lesson-body .block,.ux-shell .card:not(.camp-week){border:1px solid #e3e3e8;border-radius:18px;box-shadow:var(--shadow);background:white}
+.ux-shell .lesson-body h2{color:#1d1d1f;font-size:24px}.ux-shell .lesson-body h3{color:#333338}
+.ux-shell .lesson-body .pill{color:#005ebf;background:#edf4ff}
+.ux-shell .lesson-body .example{background:#f0f6ff;color:#243d59;border-color:#0071e3;border-radius:0 12px 12px 0}
+.ux-shell .lesson-body details{background:#fafafa;border-color:#e0e0e5;border-radius:12px}
+.ux-shell .lesson-body summary,.ux-guidance summary{color:#3d4b60}
+.ux-shell .lesson-side .card{border-top:1px solid #e3e3e8;background:#fafafd;box-shadow:none}
+.ux-checklist button,#uxLessonToc button,.ux-reading-tools label{color:#606068}
+.ux-reading-tools select{background:#e9e9ef;color:#37373d;border-radius:8px}
+.ux-shell .ux-week-brief{border-top:1px solid #e3e3e8;background:#fff}
+.ux-shell textarea{border-color:#ceced6;box-shadow:none;border-radius:12px}
+.ux-shell textarea:focus{outline:3px solid #0071e3;outline-offset:2px;background:white}
+.ux-shell .lesson-body pre{background:#202127;color:#f0f0f6;border-color:#303139;box-shadow:none;border-radius:14px;font-family:'SFMono-Regular',Consolas,monospace}
+.ux-shell .execution-studio{background:#fff!important;border-color:#e3e3e8!important;--exec-green:#0066cc;--exec-line:#dedee5}
+.ux-shell .exec-heading p,.ux-shell .exec-kicker,.ux-shell .exec-state,.ux-shell .exec-step small{color:#62626b}
+.ux-shell .exec-step{border-radius:14px;border-color:#dedee5;background:#fafafd;box-shadow:none}
+.ux-shell .exec-step[aria-pressed=true]{background:#edf5ff;border-color:#0071e3;box-shadow:0 0 0 1px #0071e3}
+.ux-shell .exec-step[aria-pressed=true]:before{background:#0071e3}
+.ux-shell .exec-step[aria-pressed=true] .exec-state,.ux-shell .exec-scrub output{color:#005bbb}
+.ux-shell .exec-step svg{stroke:#0066cc}.ux-shell .exec-explain{background:#f5f7fb;border-color:#e0e4ec}
+.ux-shell .exec-terminal{background:#202127;border-color:#303139;border-radius:14px}
+.ux-shell .exec-terminal-bar,.ux-shell .exec-code{background:#2b2d34;border-color:#41434c}
+.ux-shell .exec-terminal-bar,.ux-shell .exec-code span{color:#c5c7d1}
+.ux-shell #goBack{background:#fafafcf2;color:#0066cc;border:1px solid #d8d8e1;border-radius:999px;box-shadow:0 4px 18px #00000012;backdrop-filter:blur(16px)}
+.ux-shell #uxCommand{border:1px solid #dedee5;background:#fafafc;border-radius:22px;box-shadow:0 24px 80px #00000030}
+.ux-shell #uxCommandResults button{background:white;border-color:#e3e3e8;border-radius:12px}
+.ux-shell footer{color:#65656d;border-color:#dedee5}
+@media(hover:hover){.ux-shell .camp-week:hover{transform:translateY(-2px);border-color:#c7d7ea;box-shadow:0 8px 24px #1d1d1f0b}.ux-shell button:not(:disabled):active{transform:scale(.985)}}
+@media(max-width:760px){.ux-shell main{padding:20px 14px 32px}.ux-shell aside{background:#f3f3f7}.ux-shell #menu{min-width:44px;min-height:44px}.ux-shell .header-right button,.ux-shell .header-right .button{min-height:36px}.ux-shell .focus-tabs{position:static}.ux-continue-card,.ux-inbox{padding:20px;border-radius:18px}.ux-continue-card h2{font-size:26px}.ux-shell .camp-week{padding:19px}.ux-shell .lesson-body .block{padding:19px}.ux-shell .focus-tabs button{min-height:44px}.ux-shell .ux-reading-tools button,.ux-shell .ux-reading-tools select{min-height:38px}}
+@media(prefers-reduced-transparency:reduce){.ux-shell header,.ux-shell #goBack{background:#fafafc;backdrop-filter:none}}
+@media(prefers-contrast:more){.ux-shell{--muted:#393940;--line:#868690}.ux-shell .card,.ux-shell .block,.ux-shell .camp-week{border-color:#868690}.ux-shell button{border-color:#868690}}
+@media(prefers-reduced-motion:reduce){.ux-shell *,.ux-shell *:before,.ux-shell *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ux-shell .camp-week:hover,.ux-shell button:not(:disabled):active{transform:none!important}}
