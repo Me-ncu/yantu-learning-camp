@@ -232,3 +232,37 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 @media(prefers-contrast:more){.ux-shell .ux-phase-tabs button{background:white;border-color:#596271}.ux-shell .ux-phase-tabs button[aria-selected=true]{background:#edf1f7;border:2px solid #1d2836;box-shadow:inset 0 -3px #1d2836}.ux-shell .ux-phase-tabs button:before{display:none}}
 @media(prefers-reduced-transparency:reduce){.ux-shell .ux-phase-tabs button{background:var(--phase-wash)}.ux-shell .ux-phase-tabs button:before{display:none}}
 @media(prefers-reduced-motion:reduce){.ux-shell .ux-phase-tabs button:hover,.ux-shell .ux-phase-tabs button:not(:disabled):active{transform:none}}
+
+/* Unified quiet glass: passive reading surfaces use opaque whites;
+   interactive controls receive a tinted edge and a visible selected state. */
+.ux-shell{--quiet-edge:#d9e4ef;--quiet-highlight:inset 0 1px 0 #fff,inset 0 -1px 0 #ffffffb3;--quiet-shadow:0 4px 16px #253e5908}
+.ux-shell .ux-continue-card,.ux-shell .ux-inbox,.ux-shell .card:not(.camp-week),.ux-shell .stat,.ux-shell .block,.ux-shell .share-info{border:1px solid var(--quiet-edge);border-radius:18px;background:linear-gradient(145deg,#fff 50%,#f3f7fc);box-shadow:var(--quiet-highlight),var(--quiet-shadow)}
+.ux-shell .ux-continue-card{background:linear-gradient(130deg,#ffffffed 20%,#eaf3ff);border-color:#c9dbef}
+.ux-shell .ux-inbox{background:linear-gradient(130deg,#ffffffed 30%,#f2edfb);border-color:#ded5ef}
+.ux-shell .camp-week[data-stage]{border:1px solid rgba(var(--phase-rgb),.22);background:linear-gradient(145deg,#fff 65%,rgba(var(--phase-rgb),.07));box-shadow:var(--quiet-highlight),var(--quiet-shadow)}
+.ux-shell .lesson-body .block{background:linear-gradient(150deg,#fff 78%,#f7f9fc);border-color:#dce5ee;box-shadow:var(--quiet-highlight),var(--quiet-shadow)}
+.ux-shell .lesson-side .card{background:linear-gradient(150deg,#fff,#f2f5fc);border-color:#d9e2ef}
+.ux-shell .ux-inbox>button{border:1px solid #e2e5ed;background:linear-gradient(120deg,#ffffffbf,#f2f6fc);border-radius:12px;padding:10px 12px;margin-top:8px;box-shadow:inset 0 1px #fff}
+.ux-shell .ux-inbox #uxWrong{background:linear-gradient(120deg,#ffffffcc,#faf3e9);border-color:#ede3d4}
+.ux-shell .lesson-row,.ux-shell .library-list button,.ux-shell #uxCommandResults button{background:linear-gradient(125deg,#fff,#f0f5fc);border:1px solid #d9e4ef;border-radius:12px;box-shadow:var(--quiet-highlight),0 2px 6px #19345504}
+.ux-shell .focus-tabs button[aria-selected=true]{background:linear-gradient(125deg,#fff,#e5f0ff);color:#1757a1;box-shadow:inset 0 1px #fff,inset 0 -3px #769ece,0 3px 8px #315f8a12}
+.ux-shell .ux-checklist button.is-done{color:#22664e;background:#edf7f1;border-radius:9px;padding-left:6px}
+.ux-shell .lesson-body details{background:linear-gradient(130deg,#fff,#f4f7fc);border-color:#dfe6ef;box-shadow:inset 0 1px #fff}
+.ux-shell .quiz label{background:#f3f6fc;border:1px solid #e0e7f1;border-radius:10px;padding:10px 12px}
+.ux-shell .quiz label:has(input:checked){background:linear-gradient(120deg,#f8fbff,#e5efff);border-color:#709ace;box-shadow:inset 3px 0 #709ace}
+.ux-shell textarea,.ux-shell .share-link{background:#ffffffed;border-color:#cddbe9;box-shadow:inset 0 1px 3px #243e5905}
+.ux-shell .execution-studio{background:linear-gradient(140deg,#fff 55%,#f0f6fd)!important;border-color:#d6e3ef!important}
+.ux-shell .exec-step{background:linear-gradient(130deg,#fff,#f0f5fc);border-color:#d7e3ef;box-shadow:inset 0 1px #fff}
+.ux-shell .exec-step[aria-pressed=true]{background:linear-gradient(130deg,#fff,#deedff);border-color:#719dcf;box-shadow:inset 0 -3px #719dcf,0 4px 12px #28558a13}
+.ux-shell .exec-explain,.ux-shell .exec-try,.ux-shell .transfer,.ux-shell .lab-result{background:linear-gradient(130deg,#fcfeff,#edf4fb);border:1px solid #d5e2ef;border-radius:13px;box-shadow:inset 0 1px #fff}
+.ux-shell .lesson-body pre,.ux-shell pre{background:#f2f5fa;color:#263951;border:1px solid #d8e2ee;box-shadow:inset 0 1px #fff;border-radius:12px}
+.ux-shell .exec-terminal{background:#f4f7fc;border-color:#d2dfed;box-shadow:inset 0 1px #fff}
+.ux-shell .exec-terminal-bar,.ux-shell .exec-code{background:linear-gradient(120deg,#edf3fc,#e9eff8);border-color:#d3dfea;color:#415a74}
+.ux-shell .exec-terminal pre{color:#263951!important;background:transparent!important}
+.ux-shell .exec-code span,.ux-shell #execTerminalStatus{color:#52657b}.ux-shell .execution-studio .exec-code code{color:#70521f}.ux-shell .exec-dots{color:#7092b4}
+.ux-shell .share-actions a{background:linear-gradient(125deg,#edf5ff,#ddeaff);color:#1757a1;border:1px solid #c8daf0;border-radius:11px;box-shadow:inset 0 1px #fff}
+.ux-shell .header-right button,.ux-shell .header-right .button,.ux-shell .share-bar button,.ux-shell .ux-reading-tools button{background:linear-gradient(130deg,#fff,#edf3fb);border-color:#d5e0ec;box-shadow:inset 0 1px #fff}
+.ux-shell .ux-reading-tools button[aria-pressed=true]{background:#dfecfb;border-color:#769ece;color:#1757a1}
+@media(hover:hover){.ux-shell .ux-inbox>button:hover,.ux-shell .lesson-row:hover,.ux-shell .library-list button:hover,.ux-shell #uxCommandResults button:hover{background:linear-gradient(120deg,#fff,#e7f0fc);border-color:#99b6d6;box-shadow:inset 0 1px #fff,0 4px 10px #28558a10;transform:translateY(-1px)}}
+@media(prefers-contrast:more){.ux-shell .block,.ux-shell .card,.ux-shell .ux-inbox,.ux-shell .ux-continue-card,.ux-shell .lesson-row,.ux-shell .quiz label{background:white!important;border-color:#6c7c8e!important}.ux-shell .focus-tabs button[aria-selected=true]{box-shadow:inset 0 -3px #1d2836}}
+@media(prefers-reduced-motion:reduce){.ux-shell .ux-inbox>button:hover,.ux-shell .library-list button:hover,.ux-shell #uxCommandResults button:hover{transform:none}}
