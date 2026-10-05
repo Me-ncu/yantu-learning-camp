@@ -179,7 +179,7 @@ aside #weeks{max-height:48vh;overflow-y:auto;padding-bottom:8px}
 .ux-shell .workspace{min-width:0}.ux-shell main{padding:22px 24px 28px;max-width:1560px}
 .ux-shell h1{font-size:clamp(27px,2.35vw,34px);line-height:1.3;letter-spacing:-.7px}
 .ux-shell .ux-page-heading{margin-bottom:16px}.ux-shell .ux-page-heading p{font-size:15px;margin-top:7px}
-.ux-shell .ux-dashboard{align-items:start;gap:14px}
+.ux-shell .ux-dashboard{align-items:stretch;gap:14px}
 .ux-shell .ux-continue-card,.ux-shell .ux-inbox{padding:20px 22px;border-radius:20px}
 .ux-shell .ux-continue-card h2{font-size:27px;line-height:1.35;margin:12px 0 9px}
 .ux-shell .ux-continue-card .actions{margin:14px 0}.ux-shell .ux-inbox>button{padding:8px 0;min-height:60px}
