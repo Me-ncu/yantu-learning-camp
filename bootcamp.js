@@ -323,6 +323,8 @@ function uxSetupShell(){
  $('#home').onclick=()=>home();$('#routeMap').onclick=()=>uxCurriculum();$('#projectNav').onclick=()=>campProjects();$('#reviews').onclick=()=>reviews();
  const command=document.createElement('button');command.id='uxQuickSearch';command.innerHTML=uxIcon('search')+'<span>快速查找</span><kbd>Ctrl K</kbd>';command.onclick=uxSearchOpen;$('.search-row').replaceWith(command); // retain full-search input in an accessible secondary drawer
  document.querySelector('header').insertBefore(command,document.querySelector('.header-right'));
+ // Keep the independent back control in navigation, never over course actions.
+ document.querySelector('header').insertBefore($('#goBack'),$('#breadcrumb'));
  const legacySearch=document.createElement('div');legacySearch.className='ux-full-search';legacySearch.innerHTML='<label for="search">全文检索</label><input id="search" type="search" placeholder="输入知识点，检索课程与原始资料…">';resources.append(legacySearch);$('#search').oninput=e=>search(e.target.value);
  const overlay=document.createElement('button');overlay.id='uxMenuShade';overlay.hidden=true;overlay.type='button';overlay.setAttribute('aria-label','关闭导航目录');overlay.onclick=uxCloseMenu;document.body.append(overlay);
  $('#menu').setAttribute('aria-controls','uxSidebar');$('#menu').setAttribute('aria-expanded','false');$('#menu').onclick=()=>{if(document.body.classList.contains('menu-open'))return uxCloseMenu();uxMenuReturn=document.activeElement;document.body.classList.add('menu-open');overlay.hidden=false;$('#menu').setAttribute('aria-expanded','true');$('#home').focus();};
